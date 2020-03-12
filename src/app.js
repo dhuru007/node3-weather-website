@@ -5,6 +5,7 @@ const geocode=require('./utlis/geocode')
 const forecast=require('./utlis/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for Express Config
 const publicDirectoryPath=path.join(__dirname,'../public')
@@ -104,6 +105,6 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found.'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server is on port 3000.')
+app.listen(port,()=>{
+    console.log('Server is on port ' +port)
 })
